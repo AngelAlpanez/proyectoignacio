@@ -45,7 +45,8 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        <link rel="stylesheet" href="css/producto.css">
+        <link rel="stylesheet" href="css/zapatilla.css">
+
 
 
         <% if (user != null) {%>
@@ -66,24 +67,26 @@
         <![endif]-->
 
         <!-- Fixed navbar -->
-        <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar">
             <div class="container barra">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+            
+                    
                     </button>
-                    <a class="navbar-brand" href="jsp"><%=AppInformationHelper.getAppName()%></a>
+                    <a class="navbar-brand" href="jsp"><img src="http://www.poushoes.com/img/xtallas.png.pagespeed.ic.9LeCCWF-tA.png"/></a>
                 </div>
-                <div class="collapse navbar-collapse">
+                <div class="nav-divider">
 
-                    <ul class="nav navbar-nav">
+                    <ul class="nav nav-pills">
                         <%if (user != null) {%>
                         <jsp:include page="jsp/menuSuperior.jsp" /> 
                         <% }%>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    
+                   
                         <jsp:include page="jsp/usuario/infologin.jsp" />
                     </ul>
 
@@ -93,12 +96,28 @@
 
 
         <% if (user != null) {%>
-
+       
         <div class="container">
+        <a href="jsp#/zapatilla/list/id=1&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=1"><img src="css/images/logos/adidas.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=2&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=2"><img src="css/images/logos/asics.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=3&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=3"><img src="css/images/logos/brooks.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=4&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=4"><img src="css/images/logos/inov8.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=5&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=5"><img src="css/images/logos/joma.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=6&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=6"><img src="css/images/logos/kswiss.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=7&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=7"><img src="css/images/logos/kelme.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=8&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=8"><img src="css/images/logos/la_sportiva.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=9&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=9"><img src="css/images/logos/mizuno.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=10&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=10"><img src="css/images/logos/newbalance.png"</a></a>
+        <a href="jsp#/zapatilla/list/id=11&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=11"><img src="css/images/logos/nike.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=12&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=12"><img src="css/images/logos/puma.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=13&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=13"><img src="css/images/logos/reebok.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=14&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=14"><img src="css/images/logos/saucony.png"</a></a>
+        <a href="jsp#/zapatilla/list/id=15&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=15"><img src="css/images/logos/scott.png"</a></a>
+        <a href="jsp#/zapatilla/list/id=16&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=16"><img src="css/images/logos/thenorthface.jpg"</a></a>
+        <a href="jsp#/zapatilla/list/id=17&rpp=10&vf=7&systemfilter=id_marcas&systemfilteroperator=equals&systemfiltervalue=17"><img src="css/images/logos/zoot.jpg"</a></a>
+           
             <div class="row">
-                <div class="col-md-2" id="menuLateral">
-                    <jsp:include page="jsp/menuLateral.jsp" />
-                </div>
+                
                 <div class="col-md-10">
                     <div id="indexContenido"></div>
                     <div id="indexContenidoJsp">
@@ -110,9 +129,7 @@
             <div class="row">
                 <div class="col-md-12" id="contenidoParseado"></div>   
             </div>
-            <div class="row">
-                <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div> 
-            </div>
+            
         </div>            
 
         <% } else {%>
@@ -128,10 +145,8 @@
             <div class="row">
                 <div class="col-md-12" id="contenidoParseado"></div>   
             </div>
-            <div class="row">
-                <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div>   
-            </div>
-        </div>  
+          
+        </div> 
 
 
         <% }%>
@@ -358,6 +373,36 @@
         <script src="js/specific/producto/model.js" charset="UTF-8"></script>
         <script src="js/specific/producto/view.js" charset="UTF-8"></script>
         <script src="js/specific/producto/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/marcas/control.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/model.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/view.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/marcas/control.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/model.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/view.js" charset="UTF-8"></script>
+        <script src="js/specific/marcas/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/pisada/control.js" charset="UTF-8"></script>
+        <script src="js/specific/pisada/model.js" charset="UTF-8"></script>
+        <script src="js/specific/pisada/view.js" charset="UTF-8"></script>
+        <script src="js/specific/pisada/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/superficie/control.js" charset="UTF-8"></script>
+        <script src="js/specific/superficie/model.js" charset="UTF-8"></script>
+        <script src="js/specific/superficie/view.js" charset="UTF-8"></script>
+        <script src="js/specific/superficie/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/zapatilla/control.js" charset="UTF-8"></script>
+        <script src="js/specific/zapatilla/model.js" charset="UTF-8"></script>
+        <script src="js/specific/zapatilla/view.js" charset="UTF-8"></script>
+        <script src="js/specific/zapatilla/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/compra/control.js" charset="UTF-8"></script>
+        <script src="js/specific/compra/model.js" charset="UTF-8"></script>
+        <script src="js/specific/compra/view.js" charset="UTF-8"></script>
+        <script src="js/specific/compra/routes.js" charset="UTF-8"></script>
 
 
         <script src="js/specific/tipodocumento/model.js" charset="UTF-8"></script>
@@ -404,6 +449,16 @@
                 fProductoRoutes();
                 fTipoproductoRoutes();
                 fTipodocumentoRoutes();
+                fMarcasRoutes();
+                fPisadaRoutes();
+                fSuperficieRoutes();
+                fZapatillaRoutes();
+                fCompraRoutes();
+           
+               
+                
+          
+              
 
 
 

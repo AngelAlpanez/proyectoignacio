@@ -18,12 +18,10 @@
 
 <%@page import="net.daw.helper.EstadoHelper"%>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <img class="pull-left" src="fonts/user.png" alt="user image" style="padding: 20px 10px 5px 0" />
-            <h1>Formulario de entrada al sistema</h1>
-            <form class="form-signin" id="loginForm" action="jsp" role="form" method="post">                                    
-                <input type="hidden" name="ob" value="usuario" />
+    <div class="wrapper">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+       <input type="hidden" name="ob" value="usuario" />
                 <input type="hidden" name="op" value="login02" />                
                 <label class="control-label" for="inputLogin" style="margin-top: 15px">Usuario:</label>
                 <%
@@ -49,11 +47,14 @@
                 <%
                     }
                 %>                
-                <button class="btn btn-lg btn-primary btn-block" type="submit"  style="margin-top: 15px">Acceder</button>   
-                <button class="btn btn-lg btn-danger btn-block" type="reset" style="margin-top: 5px">Reset</button>
-            </form>
-        </div>
-    </div>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+    
 </div>
 
 

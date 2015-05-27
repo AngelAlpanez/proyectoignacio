@@ -24,12 +24,7 @@
         String usuario = us.substring(0, 1).toUpperCase() + us.substring(1);
         String level = user.getObj_tipousuario().getDescripcion();
 %>
-<li>
-    <%-- 
-    <a href="#"> <i class="icon-user">Estás logueado como <%=usuario%> / <%=user.getTipoUsuario()%></i></a>
-    --%>
-    <a href="#"> <i class="icon-user">Conectado como <%=usuario%> (<%=level%>)</i></a>
-</li>
-<li><a href="jsp?ob=usuario&op=logout">Salir</a></li>
+
+
     <%} else {%>
 <li><a href="jsp?op=login01&ob=usuario">Entrar</a></li><%}%>

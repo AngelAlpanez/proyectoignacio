@@ -11,30 +11,17 @@ and open the template in the editor.
 
 
 body {
-    padding-top: 80px;
+    padding-top: 0px;
 }
 
 .jumbotron {
+    alignment-adjust: center;
+    background-color: white ;
+    background-image: url("imgs/asics.jpg");
+    height: 500px;
+    width: auto;
+    
 
-    background-color: #f0a30a ;
-}
 
-.panel-default>.panel-heading {
-    background-color:#60a917;
-    color:whitesmoke;
-}
-
-th{
-    min-width: 30px;
-    color: whitesmoke;
-    background-color: #9a1616;
-}
-
-.datepicker th{
-    background-color: white;
-    color: black;
-}
-
-.list-group-item{
-    padding: 3px 8px;
+    img: initial;
 }

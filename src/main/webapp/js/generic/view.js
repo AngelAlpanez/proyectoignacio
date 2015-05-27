@@ -295,7 +295,7 @@ view.prototype.getBodyPageTable = function (page, fieldNames, visibleFields, tdb
             }
         });
         tabla += '<td>';
-        tabla += tdbuttons(id);
+        tabla += tdbuttons(value);
         tabla += '</td>';
         tabla += '</tr>';
     });

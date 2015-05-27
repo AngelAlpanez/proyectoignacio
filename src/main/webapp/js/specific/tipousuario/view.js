@@ -27,13 +27,13 @@ tipousuarioView.prototype.getClassNameTipousuario = function () {
 var oTipousuarioView = new tipousuarioView('tipousuario');
 
 
-tipousuarioView.prototype.loadButtons = function (id) {
+tipousuarioView.prototype.loadButtons = function (valor) {
 
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
-    botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
-    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-pencil"></i></a>';
-    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-remove"></i></a>';
+    botonera += '<a class="btn btn-default view" id="' + valor.id + '"  href="jsp#/' + this.clase + '/view/' + valor.id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
+    botonera += '<a class="btn btn-default edit" id="' + valor.id + '"  href="jsp#/' + this.clase + '/edit/' +valor.id + '"><i class="glyphicon glyphicon-pencil"></i></a>';
+    botonera += '<a class="btn btn-default remove" id="' + valor.id + '"  href="jsp#/' + this.clase + '/remove/' + valor.id + '"><i class="glyphicon glyphicon-remove"></i></a>';
     botonera += '</div></div>';
     return botonera;
 

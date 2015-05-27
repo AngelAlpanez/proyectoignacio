@@ -28,15 +28,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import net.daw.control.operation.generic.specific.implementation.AmistadControlOperationGenSpImpl;
-import net.daw.control.operation.generic.specific.implementation.CuestionarioControlOperationGenSpImpl;
+import javax.servlet.http.HttpSession;
+import net.daw.carrito.Zapatilla;
+
 import net.daw.control.operation.specific.implementation.DetallePedidoControlOperationSpImpl;
 import net.daw.control.operation.generic.specific.implementation.DocumentoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.DocumentobonitoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.OpcionControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.PedidoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.PreguntaControlOperationGenSpImpl;
-import net.daw.control.operation.generic.specific.implementation.PublicacionControlOperationGenSpImpl;
+
 import net.daw.control.operation.generic.specific.implementation.EstadoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.EstadotareaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
@@ -47,7 +48,12 @@ import net.daw.control.operation.generic.specific.implementation.TipotareaContro
 import net.daw.control.operation.generic.specific.implementation.TipotemaControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipousuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.MarcasControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.PisadaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.SuperficieControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioProveedorControlOperationGenSpimpl;
+import net.daw.control.operation.generic.specific.implementation.ZapatillaControlOperationGenSpImpl;
+import net.daw.control.operation.generic.specific.implementation.CompraControlOperationGenSpImpl;
 import net.daw.control.operation.specific.implementation.OrdenadorControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.ActividadControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.ComentarioControlOperationSpImpl;
@@ -61,13 +67,12 @@ import net.daw.control.operation.specific.implementation.ProveedorControlOperati
 import net.daw.control.operation.specific.implementation.TemaControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipoproductoControlOperationSpImpl;
 import net.daw.control.operation.specific.implementation.TipopropuestaControlOperationSpImpl;
-import net.daw.control.route.generic.specific.implementation.AmistadControlRouteGenSpImpl;
-import net.daw.control.route.generic.specific.implementation.CuestionarioControlRouteGenSpImpl;
+
 import net.daw.control.route.generic.specific.implementation.DocumentoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.DocumentobonitoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.PreguntaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.OpcionControlRouteGenSpImpl;
-import net.daw.control.route.generic.specific.implementation.PublicacionControlRouteGenSpImpl;
+
 import net.daw.control.route.generic.specific.implementation.EstadoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.EstadotareaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.PedidoControlRouteGenSpImpl;
@@ -79,7 +84,12 @@ import net.daw.control.route.generic.specific.implementation.TipotareaControlRou
 import net.daw.control.route.generic.specific.implementation.TipotemaControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipousuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.MarcasControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.PisadaControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.SuperficieControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioProveedorControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.ZapatillaControlRouteGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.CompraControlRouteGenSpImpl;
 import net.daw.control.route.specific.implementation.OrdenadorControlRouteSpImpl;
 import net.daw.control.route.specific.implementation.ActividadControlRouteSpImpl;
 import net.daw.control.route.specific.implementation.DetallePedidoControlRouteSpImpl;
@@ -188,16 +198,8 @@ public class JsonControl extends HttpServlet {
                         EstadoControlOperationGenSpImpl oEstadoControlOperation = new EstadoControlOperationGenSpImpl(request);
                         jsonResult = oEstadoRoute.execute(request, oEstadoControlOperation);
                         break;
-                    case "amistad":
-                        AmistadControlRouteGenSpImpl oAmistadRoute = new AmistadControlRouteGenSpImpl();
-                        AmistadControlOperationGenSpImpl oAmistadControlOperation = new AmistadControlOperationGenSpImpl(request);
-                        jsonResult = oAmistadRoute.execute(request, oAmistadControlOperation);
-                        break;
-                    case "publicacion":
-                        PublicacionControlRouteGenSpImpl oPublicacionRoute = new PublicacionControlRouteGenSpImpl();
-                        PublicacionControlOperationGenSpImpl oPublicacionControlOperation = new PublicacionControlOperationGenSpImpl(request);
-                        jsonResult = oPublicacionRoute.execute(request, oPublicacionControlOperation);
-                        break;
+                    
+                    
                     case "post":
                         PostControlRouteSpImpl oPostRoute = new PostControlRouteSpImpl();
                         PostControlOperationSpImpl oPostControlOperation = new PostControlOperationSpImpl(request);
@@ -225,11 +227,7 @@ public class JsonControl extends HttpServlet {
                         jsonResult = oImpuestoRoute.execute(request, oImpuestoControlOperation);
                         break;
 
-                    case "cuestionario":
-                        CuestionarioControlRouteGenSpImpl oCuestionarioRoute = new CuestionarioControlRouteGenSpImpl();
-                        CuestionarioControlOperationGenSpImpl oCuestionarioControlOperation = new CuestionarioControlOperationGenSpImpl(request);
-                        jsonResult = oCuestionarioRoute.execute(request, oCuestionarioControlOperation);
-                        break;
+                    
                     case "opcion":
                         OpcionControlRouteGenSpImpl oOpcionRoute = new OpcionControlRouteGenSpImpl();
                         OpcionControlOperationGenSpImpl oOpcionControlOperation = new OpcionControlOperationGenSpImpl(request);
@@ -313,6 +311,55 @@ public class JsonControl extends HttpServlet {
                         TipotareaControlOperationGenSpImpl oTipotareaControlOperation = new TipotareaControlOperationGenSpImpl(request);
                         jsonResult = oTipotareaRoute.execute(request, oTipotareaControlOperation);
                         break;
+                        
+                    case "marcas":
+                        MarcasControlRouteGenSpImpl oMarcasRoute = new MarcasControlRouteGenSpImpl();
+                        MarcasControlOperationGenSpImpl oMarcasControlOperation = new MarcasControlOperationGenSpImpl(request);
+                        jsonResult = oMarcasRoute.execute(request, oMarcasControlOperation);
+                        break;
+                        
+                    case "pisada":
+                        PisadaControlRouteGenSpImpl oPisadaRoute = new PisadaControlRouteGenSpImpl();
+                        PisadaControlOperationGenSpImpl oPisadaControlOperation = new PisadaControlOperationGenSpImpl(request);
+                        jsonResult = oPisadaRoute.execute(request, oPisadaControlOperation);
+                        break;
+                        
+                        
+                    case "superficie":
+                        SuperficieControlRouteGenSpImpl oSuperficieRoute = new SuperficieControlRouteGenSpImpl();
+                        SuperficieControlOperationGenSpImpl oSuperficieControlOperation = new SuperficieControlOperationGenSpImpl(request);
+                        jsonResult = oSuperficieRoute.execute(request, oSuperficieControlOperation);
+                        break;
+                        
+                        
+                    case "zapatilla":
+                        ZapatillaControlRouteGenSpImpl oZapatillaRoute = new ZapatillaControlRouteGenSpImpl();
+                        ZapatillaControlOperationGenSpImpl oZapatillaControlOperation = new ZapatillaControlOperationGenSpImpl(request);
+                        jsonResult = oZapatillaRoute.execute(request, oZapatillaControlOperation);
+                        break;
+                        
+                    case "compra":
+                        CompraControlRouteGenSpImpl oCompraRoute = new CompraControlRouteGenSpImpl();
+                        CompraControlOperationGenSpImpl oCompraControlOperation = new CompraControlOperationGenSpImpl(request);
+                        jsonResult = oCompraRoute.execute(request, oCompraControlOperation);
+                        break;
+                        
+                    case "carrito":
+                      HttpSession miSesion = request.getSession();
+                        //Zapatilla zapa=new Zapatilla(Integer.parseInt(request.getParameter("stock")));
+                        //String nombre=request.getParameter("nombre");
+                        //zapa.setNombre(nombre);
+                        
+                      Zapatilla zapa=new Zapatilla(Float.parseFloat(request.getParameter("precio")),request.getParameter("nombre"),Integer.parseInt(request.getParameter("stock")));
+                      if(zapa.haveEnoughStock(Integer.parseInt(request.getParameter("cantidad")))){
+                      zapa.purchase(Integer.parseInt(request.getParameter("cantidad")));
+                         
+                      }
+                      
+                      miSesion.setAttribute("zapatilla", zapa);
+                        break;
+                        
+                    
                         
 
                     default:

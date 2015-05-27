@@ -42,12 +42,12 @@ control.prototype.new = function (place, objParams, oModel, oView) {
     oView.doEventsLoading();
     //$('#submitForm').unbind('click');
     //$('#submitForm').click(function () {
-        oView.okValidation(function (e) {
-            resultado = oModel.setOne({json: JSON.stringify(oView.getFormValues())});
-            oView.doResultOperationNotifyToUser(place, resultado["status"], "Se ha creado el registro con id=" + resultado["message"], resultado["message"], true);
-            e.preventDefault();
-            return false;
-        });
+    oView.okValidation(function (e) {
+        resultado = oModel.setOne({json: JSON.stringify(oView.getFormValues())});
+        oView.doResultOperationNotifyToUser(place, resultado["status"], "Se ha creado el registro con id=" + resultado["message"], resultado["message"], true);
+        e.preventDefault();
+        return false;
+    });
     //});
 };
 control.prototype.view = function (place, id, oModel, oView) {
@@ -143,7 +143,7 @@ control.prototype.list = function (place, objParams, callback, oModel, oView) {
                 if (callback) {
                     var botonera = "";
                     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
-                    botonera += '<a class="btn btn-default selector_button" id="' + id + '"  href="#"><i class="glyphicon glyphicon-ok"></i></a>';
+                    botonera += '<a class="btn btn-default selector_button" id="' + id.id + '"  href="#"><i class="glyphicon glyphicon-ok"></i></a>';
                     botonera += '</div></div>';
                     return botonera;
                 } else {

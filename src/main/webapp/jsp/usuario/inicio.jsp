@@ -18,16 +18,18 @@
 
 <%@page import="net.daw.helper.AppInformationHelper"%>
 <%@page import="net.daw.helper.EstadoHelper"%>
-<div class="jumbotron">
+
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<div class="titulo">
     <h1>Bienvenidos a <%=AppInformationHelper.getAppName()%> <%=EstadoHelper.getAnyo()%></h1>
-    <h3>Versión (v.<%=EstadoHelper.getVersion()%>) de <%=EstadoHelper.getFecha()%></h3>
-    <h5>Desarrollo de aplicaciones web. CPIFP Ausiàs March. Curso <%=EstadoHelper.getCurso()%></h5>   
-    <%
-        if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
-            out.print("<h5>Modo debug</h5>");
-        }
-    %>
+   
+    
 </div>
+    
+    <div class="acceder">
+         <a href="jsp?op=login01&ob=usuario" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+         <h2>ENTRAR</h2>
+    </div>
 <div class="row">
     <div class="col-md-8">
         <div class="row">
